@@ -9,9 +9,11 @@ load_dotenv()  # Load environment variables from .env file
 import datetime
 import json
 import models
-import auth
+import auth 
+from models import Base
 from database import engine, get_db
 
+Base.metadata.create_all(bind=engine)  # Create tables if they don't exist
 app = FastAPI(title="Personal Productivity Agent API")
 
 # Enable CORS so your Streamlit frontend can talk to your backend cleanly later
