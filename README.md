@@ -62,7 +62,7 @@ python -c "import database, models; models.Base.metadata.create_all(bind=databas
 
 # Start the local development server
 python -m uvicorn main:app --reload
-```bash
+
 
 ### 🎨 2. Frontend User Interface Execution (Streamlit Workspace)
 To run the client workspace dashboard locally, open a separate terminal window or vertical terminal split in VS Code and execute the following steps:
@@ -75,5 +75,5 @@ pip install streamlit requests
 
 # 3. Launch the local Streamlit application server node
 streamlit run app.py
-```bash
+
 
