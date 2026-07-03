@@ -4,7 +4,7 @@ import requests
 import json
 
 # Backend API Configuration URL
-BASE_URL = "https://personal-productivity-agent-0qvn.render.com"
+BASE_URL = "https://personal-productivity-agent-0qvn.onrender.com"
 
 # Set global page configurations
 st.set_page_config(
