@@ -5,8 +5,7 @@ AuraFlow AI is a stateful, full-stack multi-agent orchestration ecosystem design
 ---
 
 ## 👥 Contributor Details
-* **Developer Name:** Vaishnavi Dwivedi  
-* **Track:** Computer Science & Engineering (Data Science Specialization)  
+* **Developer Name:** Vaishnavi Dwivedi   
 * **Capstone Submission Module:** Module 6 (IITR-SE-2509-Cohort-B)  
 
 ---
