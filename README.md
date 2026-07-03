@@ -11,9 +11,9 @@ AuraFlow AI is a stateful, full-stack multi-agent orchestration ecosystem design
 ---
 
 ## 🗂️ Project Deliverables & Media Links
-* **🎬 Project Walkthrough Video Demo:** [[Insert Your Google Drive/Loom Link Here](https://drive.google.com/file/d/16WqF74UBBVtV87r4Q3x5OXfMxRlQV4HV/view?usp=drive_link)]  
-* **📊 Architectural Strategy Slide Deck (PPT):** [[Insert Your Google Drive/Canva Link Here](https://docs.google.com/presentation/d/1EM6PUzk704w8jHmql2hgORZD8adXkZ7dvYCxNLB6Jp8/edit?usp=drive_link)]  
-* **💻 GitHub Repository:** [[Insert Your GitHub Repo URL Here](https://github.com/Vaishnavi231104/personal-productivity-agent)]  
+* **🎬 Project Walkthrough Video Demo:** [[Google Drive for Project Walkthrough Video Here](https://drive.google.com/file/d/16WqF74UBBVtV87r4Q3x5OXfMxRlQV4HV/view?usp=drive_link)]  
+* **📊 Architectural Strategy Slide Deck (PPT):** [[Google Drive for PPT Here](https://docs.google.com/presentation/d/1EM6PUzk704w8jHmql2hgORZD8adXkZ7dvYCxNLB6Jp8/edit?usp=drive_link)]  
+* **💻 GitHub Repository:** [[GitHub Repo URL Here](https://github.com/Vaishnavi231104/personal-productivity-agent)]  
 
 ---
 
