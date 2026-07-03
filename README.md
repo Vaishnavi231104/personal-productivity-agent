@@ -19,7 +19,7 @@ AuraFlow AI is a stateful, full-stack multi-agent orchestration ecosystem design
 
 ## 🚀 Live Deployments
 * **Live Frontend Dashboard (Streamlit):** [[AuraFlow AI app URL](https://personal-appuctivity-agent-rphjvq47lh8ld6ghkqmowx.streamlit.app/)]
-* **Live Production API (FastAPI/Render):** https://personal-productivity-agent.onrender.com/docs
+* **Live Production API (FastAPI/Render):** [https://personal-productivity-agent.onrender.com/docs](https://personal-productivity-agent-0qvn.onrender.com/docs)
 ---
 
 ## 🤖 Core Agentic System Workflow
