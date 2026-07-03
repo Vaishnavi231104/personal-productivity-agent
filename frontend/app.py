@@ -4,7 +4,7 @@ import requests
 import json
 
 # Backend API Configuration URL
-BASE_URL = "http://localhost:8000"
+BASE_URL = "https://personal-productivity-agent-0qvn.render.com"
 
 # Set global page configurations
 st.set_page_config(
