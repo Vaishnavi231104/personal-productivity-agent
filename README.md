@@ -1,4 +1,4 @@
-# ⚡ AuraFlow AI — Intelligent Personal Productivity Framework
+# ⚡ AuraFlow AI — The Ultimate Mind-Task Sync
 
 AuraFlow AI is a stateful, full-stack multi-agent orchestration ecosystem designed to handle personal goal mapping and task classification. Driven by a **FastAPI** backend and an intelligent **LangGraph state machine**, the application splits chaotic morning raw text streams into highly structured, prioritized database entries while generating side-by-side behavioral timelines and scheduled automated habit reflection logs.
 
