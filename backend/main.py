@@ -12,6 +12,8 @@ import models
 import auth 
 from models import Base
 from database import engine, get_db
+from sqlalchemy import func
+
 
 Base.metadata.create_all(bind=engine)  # Create tables if they don't exist
 app = FastAPI(title="Personal Productivity Agent API")
@@ -146,6 +148,7 @@ def morning_checkin(tasks_raw: List[str], current_user: models.User = Depends(au
     )
     
     # 2. Save these newly classified tasks directly into our database
+    # 2. Save these newly classified tasks directly into our database
     saved_tasks = []
     for item in agent_results.get("classified_tasks", []):
         db_task = models.Task(
@@ -156,17 +159,15 @@ def morning_checkin(tasks_raw: List[str], current_user: models.User = Depends(au
         )
         db.add(db_task)
         saved_tasks.append(db_task)
-    
-    db.commit()
-    
+
+    db.commit()  # Make sure this has exactly 4 spaces of indentation (aligned with saved_tasks = [])
+
     return {
         "status": "Morning checkin complete",
         "classified_tasks": agent_results.get("classified_tasks"),
         "overdue_tasks": agent_results.get("overdue_tasks")
     }
 
-from sqlalchemy import func
-import datetime
 
 # --- 🌌 EVENING CHECK-IN ENDPOINT (UPDATED TO PERSIST AI FEEDBACK) ---
 @app.post("/checkin/evening", tags=["Agent"])
