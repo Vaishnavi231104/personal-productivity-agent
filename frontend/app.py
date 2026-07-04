@@ -31,7 +31,42 @@ if st.session_state.token is None:
     st.title("⚡ Welcome to AuraFlow AI")
     st.markdown("*Your Intelligent Personal Productivity Core Agent Framework*")
     st.divider()
-    
+
+    # 👇 ADD THE ROSE PINK CSS SNIPPET HERE (Line 34 onwards) 👇
+    st.markdown(
+        """
+        <style>
+        /* Target the main background area of the login screen */
+        .stMainBlockContainer, [data-testid="stAppViewBlockContainer"] {
+            background-color: #FFF0F2 !important; /* Soft pastel rose pink */
+        }
+        
+        /* Add a stylish card look around your authentication inputs */
+        div[data-testid="stVerticalBlock"] > div:has(div.stRadio) {
+            background-color: #ffffff !important; 
+            border: 2px solid #FFB7C5 !important; /* Elegant rose border */
+            border-radius: 16px !important;
+            padding: 30px !important;
+            box-shadow: 0 4px 20px rgba(255, 183, 197, 0.4) !important; /* Rose glow */
+        }
+
+        /* Style your 'Authorize Session Key' action button */
+        div.stButton > button:first-child {
+            background-color: #E8607D !important; /* Vibrant rose pink */
+            color: white !important;
+            border-radius: 8px !important;
+            border: none !important;
+            font-weight: bold !important;
+        }
+        div.stButton > button:first-child:hover {
+            background-color: #D14D6A !important; /* Darker rose on hover */
+        }
+        </style>
+        """,
+        unsafe_html=True
+    )
+
+    # 🔑 Your existing inputs continue right below:
     auth_mode = st.radio("Choose Access Route", ["Log In", "Sign Up"], horizontal=True)
     
     email = st.text_input("Corporate Email Address")
