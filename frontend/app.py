@@ -32,39 +32,36 @@ if st.session_state.token is None:
     st.markdown("*Your Intelligent Personal Productivity Core Agent Framework*")
     st.divider()
 
-    # 👇 ADD THE ROSE PINK CSS SNIPPET HERE (Line 34 onwards) 👇
+    # 👇 REPLACE WITH THIS CLEAN STYLING SNIPPET 👇
     st.markdown(
         """
         <style>
-        /* Target the main background area of the login screen */
-        .stMainBlockContainer, [data-testid="stAppViewBlockContainer"] {
-            background-color: #FFF0F2 !important; /* Soft pastel rose pink */
+        /* Target the main page wrapper container */
+        .stMainBlockContainer {
+            background-color: #FFF0F2 !important;
         }
         
-        /* Add a stylish card look around your authentication inputs */
-        div[data-testid="stVerticalBlock"] > div:has(div.stRadio) {
-            background-color: #ffffff !important; 
-            border: 2px solid #FFB7C5 !important; /* Elegant rose border */
-            border-radius: 16px !important;
-            padding: 30px !important;
-            box-shadow: 0 4px 20px rgba(255, 183, 197, 0.4) !important; /* Rose glow */
+        /* Target input widgets area to give it a clean outline layout */
+        .element-container:has(.stRadio) {
+            background-color: #ffffff !important;
+            border: 2px solid #FFB7C5 !important;
+            border-radius: 12px !important;
+            padding: 20px !important;
         }
 
-        /* Style your 'Authorize Session Key' action button */
-        div.stButton > button:first-child {
-            background-color: #E8607D !important; /* Vibrant rose pink */
+        /* Style the session activation push button */
+        .stButton > button {
+            background-color: #E8607D !important;
             color: white !important;
             border-radius: 8px !important;
-            border: none !important;
             font-weight: bold !important;
-        }
-        div.stButton > button:first-child:hover {
-            background-color: #D14D6A !important; /* Darker rose on hover */
+            border: none !important;
         }
         </style>
         """,
         unsafe_html=True
     )
+    
 
     # 🔑 Your existing inputs continue right below:
     auth_mode = st.radio("Choose Access Route", ["Log In", "Sign Up"], horizontal=True)
