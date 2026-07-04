@@ -26,62 +26,62 @@ if "last_tomorrow_plan" not in st.session_state:
     st.session_state.last_tomorrow_plan = None
 
 
+# --- PART 2: AUTHENTICATION INTERFACE MASK ---
 if st.session_state.token is None:
     st.title("⚡ Welcome to AuraFlow AI")
     st.markdown("*Your Intelligent Personal Productivity Core Agent Framework*")
     st.divider()
 
-    # 👇 Clean, native HTML/CSS injection with no extra parameters to break Python 3.14 👇
+    # Clean, native rose pink HTML/CSS injection just for the entry gate
     st.html('<style>.stApp { background-color: #FFF0F2 !important; }</style>')
 
-    # 🔑 The standard gateway elements continue right below:
     auth_mode = st.radio("Choose Access Route", ["Log In", "Sign Up"], horizontal=True)
     email = st.text_input("Email Address")
     password = st.text_input("Password", type="password")
+
     if auth_mode == "Log In":
         if st.button("Log In", use_container_width=True):
             if email and password:
-                with st.spinner("Validating JWT credentials tokens..."):
-                    # 💡 FIX: Explicitly send credentials as a form dictionary using data=
-                    login_payload = {
-                        "username": email, 
-                        "password": password
-                    }
-                    res = requests.post(f"{BASE_URL}/auth/login", data=login_payload)
-                    
-                    if res.status_code == 200:
-                        st.session_state.token = res.json()["access_token"]
-                        st.session_state.user_email = email
-                        st.success("🎉 Session verified successfully!")
-            # 👇 These three lines must be indented inside the IF block!
-                        import time
-                        time.sleep(1)
-                        st.rerun()
-                    else:
-                        st.error("Access denied. Invalid credentials mapped.")
-    else:
-        st.warning("Please input complete login details.")
+                # Explicitly pass credentials as a dictionary mapping
+                login_payload = {
+                    "username": email,
+                    "password": password
+                }
+                res = requests.post(f"{BASE_URL}/auth/login", data=login_payload)
                 
-else: # Sign Up Pipeline
-    if st.button("Provision New Account Profile", use_container_width=True):
-        if email and password:
-            with st.spinner("Registering database account profile records..."):
-                 res = requests.post(f"{BASE_URL}/auth/signup", json={"email": email, "password": password})
-                    # Accept both 200 and 201 status codes from your FastAPI backend
-                 if res.status_code in [200, 201]:
-                    st.success("✨ Profile generated! Switch to Log In mode to authorize.")
-                 else:
-                     st.error("Registration rejected. User profile might already exist.")
-        else:
-            st.warning("Please fill out registration text parameters.")
+                if res.status_code == 200:
+                    st.session_state.token = res.json()["access_token"]
+                    st.session_state.user_email = email
+                    st.success("🎉 Session verified successfully!")
+                    import time
+                    time.sleep(1)
+                    st.rerun()
+                else:
+                    st.error("Access denied. Invalid credentials mapped.")
+            else:
+                st.warning("Please input complete login details.")
 
+    else: # Sign Up Pipeline
+        if st.button("Provision New Account Profile", use_container_width=True):
+            if email and password:
+                with st.spinner("Registering database account profile records..."):
+                    res = requests.post(f"{BASE_URL}/auth/signup", json={"email": email, "password": password})
+                    
+                    if res.status_code in [200, 201]:
+                        st.success("✨ Profile generated! Switch to Log In mode to authorize.")
+                    else:
+                        st.error("Registration rejected. User profile might already exist.")
+            else:
+                st.warning("Please fill out registration text parameters.")
 
-# --- 🎨 PART 3: DYNAMIC WORKSPACE INTERFACE ---
+# 👇 LINE 80: This else matches the very top "if st.session_state.token is None:" 👇
 else:
-headers = {"Authorization": f"Bearer {st.session_state.token}"}
+    # --- PART 3: DYNAMIC WORKSPACE INTERFACE ---
+    headers = {"Authorization": f"Bearer {st.session_state.token}"}
     
     # 🕒 Dynamic Time-Aware Background Themes
     current_hour = datetime.datetime.now().hour
+    
     
     # Check if morning vs evening to change backdrop aesthetics
     if 5 <= current_hour < 16:
