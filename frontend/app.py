@@ -31,12 +31,13 @@ if st.session_state.token is None:
     st.markdown("*Your Intelligent Personal Productivity Core Agent Framework*")
     st.divider()
 
-    # 👇 A safe, single-line styling injection that bypasses the telemetry parser perfectly 👇
-    st.markdown('<style>.stApp { background-color: #FFF0F2 !important; }</style>', unsafe_html=True)
+    # 👇 Clean, native HTML/CSS injection with no extra parameters to break Python 3.14 👇
+    st.html('<style>.stApp { background-color: #FFF0F2 !important; }</style>')
 
     # 🔑 The standard gateway elements continue right below:
     auth_mode = st.radio("Choose Access Route", ["Log In", "Sign Up"], horizontal=True)
-    
+    email = st.text_input("Corporate Email Address")
+    password = st.text_input("Security Access Code (Password)", type="password")
     if auth_mode == "Log In":
         if st.button("Authorize Session Key", use_container_width=True):
             if email and password:
