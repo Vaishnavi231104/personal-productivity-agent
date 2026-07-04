@@ -26,31 +26,26 @@ if "last_tomorrow_plan" not in st.session_state:
     st.session_state.last_tomorrow_plan = None
 
 
-# --- 🔒 PART 2: AUTHENTICATION INTERFACE MASK ---
 if st.session_state.token is None:
     st.title("⚡ Welcome to AuraFlow AI")
     st.markdown("*Your Intelligent Personal Productivity Core Agent Framework*")
     st.divider()
 
-    # 👇 REPLACE WITH THIS CLEAN STYLING SNIPPET 👇
+    # 👇 THIS ACCENTUATES ONLY THE LOGIN/SIGNUP STAGE NATIVELY 👇
     st.markdown(
         """
         <style>
-        /* Target the main page wrapper container */
-        .stMainBlockContainer {
+        /* Temporarily shift the main background to rose pink just for this screen */
+        .stApp {
             background-color: #FFF0F2 !important;
         }
         
-        /* Target input widgets area to give it a clean outline layout */
-        .element-container:has(.stRadio) {
-            background-color: #ffffff !important;
-            border: 2px solid #FFB7C5 !important;
-            border-radius: 12px !important;
-            padding: 20px !important;
+        /* Style the input text box labels and borders slightly */
+        .stTextInput input {
+            border: 1px solid #FFB7C5 !important;
         }
 
-        /* Style the session activation push button */
-        .stButton > button {
+        # .stButton > button {
             background-color: #E8607D !important;
             color: white !important;
             border-radius: 8px !important;
@@ -61,13 +56,9 @@ if st.session_state.token is None:
         """,
         unsafe_html=True
     )
-    
 
-    # 🔑 Your existing inputs continue right below:
+    # 🔑 The standard gateway elements continue right below:
     auth_mode = st.radio("Choose Access Route", ["Log In", "Sign Up"], horizontal=True)
-    
-    email = st.text_input("Corporate Email Address")
-    password = st.text_input("Security Access Code (Password)", type="password")
     
     if auth_mode == "Log In":
         if st.button("Authorize Session Key", use_container_width=True):
