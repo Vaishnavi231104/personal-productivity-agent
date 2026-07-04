@@ -36,10 +36,10 @@ if st.session_state.token is None:
 
     # 🔑 The standard gateway elements continue right below:
     auth_mode = st.radio("Choose Access Route", ["Log In", "Sign Up"], horizontal=True)
-    email = st.text_input("Corporate Email Address")
-    password = st.text_input("Security Access Code (Password)", type="password")
+    email = st.text_input("Email Address")
+    password = st.text_input("Password", type="password")
     if auth_mode == "Log In":
-        if st.button("Authorize Session Key", use_container_width=True):
+        if st.button("Log In", use_container_width=True):
             if email and password:
                 with st.spinner("Validating JWT credentials tokens..."):
                     # 💡 FIX: Explicitly send credentials as a form dictionary using data=
