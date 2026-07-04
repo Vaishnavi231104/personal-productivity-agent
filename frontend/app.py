@@ -31,31 +31,8 @@ if st.session_state.token is None:
     st.markdown("*Your Intelligent Personal Productivity Core Agent Framework*")
     st.divider()
 
-    # 👇 THIS ACCENTUATES ONLY THE LOGIN/SIGNUP STAGE NATIVELY 👇
-    st.markdown(
-        """
-        <style>
-        /* Temporarily shift the main background to rose pink just for this screen */
-        .stApp {
-            background-color: #FFF0F2 !important;
-        }
-        
-        /* Style the input text box labels and borders slightly */
-        .stTextInput input {
-            border: 1px solid #FFB7C5 !important;
-        }
-
-        # .stButton > button {
-            background-color: #E8607D !important;
-            color: white !important;
-            border-radius: 8px !important;
-            font-weight: bold !important;
-            border: none !important;
-        }
-        </style>
-        """,
-        unsafe_html=True
-    )
+    # 👇 A safe, single-line styling injection that bypasses the telemetry parser perfectly 👇
+    st.markdown('<style>.stApp { background-color: #FFF0F2 !important; }</style>', unsafe_html=True)
 
     # 🔑 The standard gateway elements continue right below:
     auth_mode = st.radio("Choose Access Route", ["Log In", "Sign Up"], horizontal=True)
